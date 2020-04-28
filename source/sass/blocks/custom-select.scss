@@ -1,0 +1,75 @@
+.custom-select {
+  font-family: $arial;
+  font-size: 14px;
+  width: 226px;
+  position: relative;
+}
+
+.custom-select__active {
+  border: 1px solid $light-black;
+  border-radius: 4px;
+  padding: 15px 15px 13px;
+  margin: 0;
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: $dark-grey;
+  background: url("../img/arrow-down-icon.svg") no-repeat top 19px right 8px
+    $white;
+  background-size: 10px;
+
+  @include input-hover-effect;
+
+
+  &--closed {
+    border: 1px solid $grey-border;
+    background-image: url("../img/arrow-down-icon--grey.svg");
+  }
+
+  &--darken {
+    color: $light-black;
+    background-image: url("../img/arrow-down-icon.svg");
+  }
+}
+
+.custom-select__list {
+  background-color: $white;
+  border: 1px solid $grey-border;
+  position: absolute;
+  width: 226px;
+  z-index: 2;
+  box-shadow: 0 1px 20px 3px rgba(0, 0, 0, 0.1);
+
+  &--closed {
+    display: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.custom-select__item {
+  padding: 15px 15px 12px;
+  cursor: pointer;
+
+  &:hover {
+    border-left: 4px solid $blue;
+    padding-left: 11px;
+    background-color: $grey-background;
+  }
+}
+
+@media (max-width: 767px) {
+  .custom-select {
+    width: 100%;
+  }
+
+  .custom-select__list {
+    width: 100%;
+  }
+
+  .custom-select__active {
+    padding-right: 25px;
+    background-position: top 19px right 15px;
+  }
+}

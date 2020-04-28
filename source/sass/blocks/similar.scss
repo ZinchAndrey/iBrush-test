@@ -1,0 +1,54 @@
+.similar {
+  padding-top: 55px;
+  padding-bottom: 57px;
+
+  h2 {
+    @include header;
+  }
+}
+
+.similar__slider-block {
+  display: flex;
+  justify-content: space-between;
+}
+
+.similar__slider-item {
+  width: calc((100% - 60px) / 3);
+  color: inherit;
+  text-decoration: none;
+
+  @include hover-effect;
+
+  p {
+    font-family: $consolas;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  img {
+    width: 226px;
+  }
+}
+
+@media (max-width: 767px) {
+  .similar {
+    padding-top: 30px;
+
+    h2 {
+      @include header-mobile;
+      margin-bottom: 20px;
+    }
+  }
+
+  .similar__slider-block {
+    flex-wrap: wrap;
+  }
+
+  .similar__slider-item {
+    img {
+      width: 280px;
+    }
+  }
+}

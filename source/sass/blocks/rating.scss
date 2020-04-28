@@ -1,0 +1,76 @@
+.rating {
+  legend {
+    font-family: $consolas;
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: bold;
+    margin-bottom: 12px;
+  }
+}
+
+.rating-wrapper {
+  position: relative;
+  background-image: url("../img/star-icon-off-wide.png");
+  background-size: 34px 23px;
+  background-repeat: repeat-x;
+  height: 24px;
+  width: 170px;
+}
+
+.rating-star {
+  appearance: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 24px;
+  font-size: inherit;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:checked,
+  &:hover {
+    background-image: url("../img/star-icon-on-wide.png");
+    background-repeat: repeat-x;
+  }
+
+  &:hover ~ .rating-star {
+    background-image: url("../img/star-icon-off-wide.png");
+    background-repeat: repeat-x;
+  }
+
+  &:nth-of-type(1) {
+    z-index: 5;
+    width: 34px;
+  }
+
+  &:nth-of-type(2) {
+    z-index: 4;
+    width: 68px;
+  }
+
+  &:nth-of-type(3) {
+    z-index: 3;
+    width: 102px;
+  }
+
+  &:nth-of-type(4) {
+    z-index: 2;
+    width: 136px;
+  }
+
+  &:nth-of-type(5) {
+    z-index: 1;
+    width: 170px;
+  }
+}
+
+@media (max-width: 767px) {
+  .rating {
+    legend {
+      @include font-size-mob;
+    }
+  }
+}

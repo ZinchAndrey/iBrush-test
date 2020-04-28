@@ -1,0 +1,50 @@
+//шрифты
+$consolas: "Consolas", "Arial", sans-serif;
+$segoe: "Segoe UI", "Arial", sans-serif;
+$arial: "Arial", sans-serif;
+
+// цвета
+$black: #000000;
+$light-black: #222222;
+$white: #ffffff;
+$blue: #0062ff;
+$grey: #dadbdc;
+$dark-grey: #777777;
+$black-text: #202326;
+$grey-background: #ededed;
+$grey-border: #e6e6e6;
+
+// блоки кода
+@mixin header() {
+  font-size: 28px;
+  line-height: 36px;
+  margin: 0;
+  margin-bottom: 30px;
+  font-weight: 400;
+  font-family: $consolas;
+}
+
+@mixin header-mobile() {
+  font-size: 20px;
+  line-height: 36px;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+@mixin hover-effect() {
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+@mixin input-hover-effect() {
+  &:hover,
+  &:focus {
+    border: 1px solid $light-black;
+  }
+}
+
+@mixin font-size-mob() {
+  font-size: 16px;
+  line-height: 18px;
+}
